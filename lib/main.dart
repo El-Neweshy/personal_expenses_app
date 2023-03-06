@@ -31,6 +31,9 @@ class MyHomePage extends StatelessWidget {
     Transaction(id: 't3', title: 'Food', amount: 5.25, date: DateTime.now()),
   ];
 
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +47,8 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Card(
             elevation: 5,
@@ -57,6 +60,34 @@ class MyHomePage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 25,
                 ),
+              ),
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: const EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    autocorrect: true,
+                    decoration: const InputDecoration(labelText: 'Title'),
+                    controller: titleController,
+                  ),
+                  TextField(
+                    autocorrect: true,
+                    decoration: const InputDecoration(labelText: 'Amount'),
+                    controller: amountController,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Add Transaction',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  )
+                ],
               ),
             ),
           ),
