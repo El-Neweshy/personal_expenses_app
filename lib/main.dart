@@ -36,25 +36,27 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Card(
-            elevation: 5,
-            child: Container(
-              width: double.infinity,
-              color: Colors.blue[100],
-              child: const Text(
-                'Chart',
-                style: TextStyle(
-                  fontSize: 25,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Card(
+              elevation: 5,
+              child: Container(
+                width: double.infinity,
+                color: Colors.blue[100],
+                child: const Text(
+                  'Chart',
+                  style: TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
               ),
             ),
-          ),
-          const UserTransactions(),
-        ],
+            const UserTransactions(),
+          ],
+        ),
       ),
     );
   }
